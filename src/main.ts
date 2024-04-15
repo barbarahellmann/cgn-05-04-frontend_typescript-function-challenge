@@ -23,24 +23,30 @@ const arrayOfNumbers: number [] = [2,4,6,8,10]
 const initialValue = 0;
 const sumNumbers = arrayOfNumbers.reduce(
     (accumulator, currentValue) => accumulator + currentValue,initialValue);
+// Das scheint mir zu kompliziert um richtig zu sein???
 
 console.log("Liste an Zahlen: " + arrayOfNumbers)
-// Open: wie kann ich auf einzelne Elemente zugreifen? Mit charAt???
+// ??? wie kann ich auf einzelne Elemente zugreifen? Mit charAt???
 console.log("Summe: " + sumNumbers)
 
 // Step 4: Create an array of numbers. Use the '.some' function to check if at least one number is greater than 10.
 
 const arrayOfNumbers2: number [] = [6,8,10,12,14]
-const biggerThenTen = (element) => element > 10;
-if (arrayOfNumbers2.some(biggerThenTen)) {
+
+const biggerThenTen = (arrayOfNumbers2.some((number: number) => number > 10))
+if (biggerThenTen) {
     console.log(arrayOfNumbers2 + " hat einen Wert > 10");
 } else{
     console.log(arrayOfNumbers2 + " hat keinen Wert > 10");
 }
 
+// Gegentest bei STtep 4
+
 const arrayOfNumbers3: number [] = [2,4,6,8]
-if (arrayOfNumbers3.some(biggerThenTen)) {
+if (biggerThenTen) {
     console.log(arrayOfNumbers3 + " hat einen Wert > 10");
 } else{
     console.log(arrayOfNumbers3 + " hat keinen Wert > 10");
 }
+
+
