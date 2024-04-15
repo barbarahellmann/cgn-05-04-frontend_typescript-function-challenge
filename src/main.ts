@@ -43,13 +43,13 @@ console.log("Summe: " + sumNumbers)
 // Step 4:
 // Create an array of numbers. Use the '.some' function to check if at least one number is greater than 10.
 
-const arrayOfNumbers2: number [] = [6,8,10,12,14]
+const nextArray: number [] = [6,8,10,12,14]
 
-const biggerThenTen = (arrayOfNumbers2.some((number: number) => number > 10))
+const biggerThenTen = (nextArray.some((number: number) => number > 10))
 if (biggerThenTen) {
-    console.log(arrayOfNumbers2 + " hat einen Wert > 10");
+    console.log(nextArray + " hat einen Wert > 10");
 } else {
-    console.log(arrayOfNumbers2 + " hat keinen Wert > 10");
+    console.log(nextArray + " hat keinen Wert > 10");
 }
 
 // Gegentest zu Step 4
@@ -79,3 +79,16 @@ console.log("Gegebene Liste: " + longNumberList)
 
 console.log("In ascending sortiert: " + longNumberList.sort())
 
+console.log("In decending sortiert: " + longNumberList.sort(function(a,b){return b - a;}));
+
+const squareNumbers: number[] = longNumberList.map(((number: number) => number * number))
+console.log("Quadrierte Zahlen: " + squareNumbers)
+
+const lessNumbers = squareNumbers.slice(4,-2)
+console.log("Ohne die niedrigsten 2 und höchsten 4 Zahlen: " + lessNumbers)
+
+const devidableBy4: number[] = lessNumbers.filter((number => number % 4 !== 0));
+console.log("Ohne die Zahlen, die durch 4 teilbar sind: " + devidableBy4)
+
+const result: number[] = devidableBy4.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
+console.log("The result is: " + result)
